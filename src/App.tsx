@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { DefaultLayout } from './components/DefaultLayout';
 // import { Home } from './pages/Home';
 // import { Login } from './pages/Login'; // O nosso login de restaurante
-// import { AdminLayout } from './components/AdminLayout';
+import { AdminLayout } from './components/AdminLayout';
 // import { Dashboard } from './pages/admin/Dashboard';
 // import { NewProduct } from './pages/admin/NewProduct';
 // import { ProductList } from './pages/admin/ProductList';
@@ -32,7 +32,7 @@ export function App() {
             MUNDO B2B: RESTAURANTE (Totalmente desacoplado)
             ========================================= */}
         {/* ADMINISTRAÇÃO: Com Sidebar e Proteção de Rota [cite: 135] */}
-        {/* <Route path="/restaurante" element={<AdminLayout />}> */}
+        <Route path="/restaurante" element={<AdminLayout />}/>
           {/* <Route path="produtos/editar/:id" element={<EditProduct />} /> */}
           {/* <Route path="dashboard" element={<Dashboard />} /> */}
           {/* <Route path="produtos" element={<ProductList />} /> */}
