@@ -54,6 +54,4 @@ export function App() {
       </Routes>
     </BrowserRouter>
   );
-}
-
-export default App;
+}}
