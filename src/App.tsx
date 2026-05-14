@@ -1,5 +1,6 @@
 // src/App.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import EditProduct from './pages/admin/EditProduct';
 // import { DefaultLayout } from './components/DefaultLayout';
 // import { Home } from './pages/Home';
 // import { Login } from './pages/Login'; // O nosso login de restaurante
@@ -50,7 +51,7 @@ export function App() {
           {/* <Route index element={<Home />} /> */}
           {/* <Route path="search" element={<Search />} /> Nova Rota */}
         {/* </Route> */}
-
+<Route path="/edit-product" element={<EditProduct />} />
       </Routes>
     </BrowserRouter>
   );
