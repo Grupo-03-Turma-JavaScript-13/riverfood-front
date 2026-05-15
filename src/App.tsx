@@ -8,6 +8,8 @@ import { NewProduct } from "./pages/admin/NewProduct";
 import { ProductList } from "./pages/admin/ProductList";
 import { Profile } from "./pages/admin/Profile";
 import { Search } from "./pages/Search";
+import { DefaultLayout } from "./components/DefaultLayout";
+import { EditProduct } from "./pages/admin/EditProduct";
 
 // Componente bobo só para marcar lugar na tela do cliente
 function EmBreveCliente() {
