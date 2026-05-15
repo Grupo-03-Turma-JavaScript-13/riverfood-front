@@ -1,6 +1,5 @@
 // src/App.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import EditProduct from './pages/admin/EditProduct';
 // import { DefaultLayout } from './components/DefaultLayout';
 // import { Home } from './pages/Home';
 // import { Login } from './pages/Login'; // O nosso login de restaurante
@@ -8,7 +7,7 @@ import EditProduct from './pages/admin/EditProduct';
 // import { Dashboard } from './pages/admin/Dashboard';
 // import { NewProduct } from './pages/admin/NewProduct';
 // import { ProductList } from './pages/admin/ProductList';
-// import { EditProduct } from './pages/admin/EditProduct';
+import { EditProduct } from './pages/admin/EditProduct';
 // import { Profile } from './pages/admin/Profile';
 // import { Search } from './pages/Search';
 
