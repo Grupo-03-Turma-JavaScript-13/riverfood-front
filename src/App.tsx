@@ -1,122 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+// src/App.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Login } from "./pages/Login"; // O nosso login de restaurante
+import { AdminLayout } from "./components/AdminLayout";
+import { Dashboard } from "./pages/admin/Dashboard";
+import { NewProduct } from "./pages/admin/NewProduct";
+import { ProductList } from "./pages/admin/ProductList";
+import { Profile } from "./pages/admin/Profile";
+import { Search } from "./pages/Search";
+import { DefaultLayout } from "./components/DefaultLayout";
+import { EditProduct } from "./pages/admin/EditProduct";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+// Componente bobo só para marcar lugar na tela do cliente
+function EmBreveCliente() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <div className="min-h-screen flex items-center justify-center bg-surface-bg">
+      <h1 className="text-2xl font-bold text-surface-muted">
+        Login de Cliente em construção 🚧
+      </h1>
+    </div>
+  );
 }
 
-export default App
+export function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* LOGIN: Sem moldura */}
+        <Route path="/restaurante/login" element={<Login />} />
+
+        {/* =========================================
+            MUNDO B2B: RESTAURANTE (Totalmente desacoplado)
+            =========================================
+         ADMINISTRAÇÃO: Com Sidebar e Proteção de Rota [cite: 135] */}
+        <Route path="/restaurante" element={<AdminLayout />}>
+          <Route path="produtos/editar/:id" element={<EditProduct />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="produtos" element={<ProductList />} />
+          <Route path="produtos/novo" element={<NewProduct />} />
+          <Route path="perfil" element={<Profile />} />
+        </Route>
+
+        {/* =========================================
+            MUNDO B2C: CLIENTE / CONSUMIDOR
+            =========================================
+         Placeholder do Cliente */}
+        <Route path="/login-cliente" element={<EmBreveCliente />} />
+
+        <Route path="/" element={<DefaultLayout />}>
+          <Route index element={<Home />} />
+          <Route path="search" element={<Search />} /> Nova Rota
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
