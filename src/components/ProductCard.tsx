@@ -21,7 +21,7 @@ export interface ProductProps {
 const FALLBACK_IMAGE = 'https://ik.imagekit.io/nuqrdttx8/image.png?updatedAt=1776713581299';
 
 export function ProductCard(props: ProductProps) {
-    const { id, nome, descricao, preco, imgUrl, healthScore } = props;
+    const { nome, descricao, preco, imgUrl, healthScore } = props;
 
     // Estado para controlar o Modal de Raio-X
     const [isModalOpen, setIsModalOpen] = useState(false);

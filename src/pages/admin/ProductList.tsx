@@ -7,7 +7,6 @@ import {
     PencilSimple,
     Trash,
     Plus,
-    WarningCircle,
     ChefHat
 } from '@phosphor-icons/react';
 import { toast } from 'react-toastify';

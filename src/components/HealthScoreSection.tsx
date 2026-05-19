@@ -2,8 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Heartbeat, Leaf, ThermometerHot, ShieldCheck, 
-  Plus, Minus, ArrowsCounterClockwise, CheckCircle 
-} from '@phosphor-icons/react';
+  Plus, Minus, ArrowsCounterClockwise} from '@phosphor-icons/react';
 
 export function HealthScoreSection() {
   // --- Lógica do Simulador ---

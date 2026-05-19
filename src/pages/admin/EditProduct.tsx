@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'react-toastify';
-import { CheckCircle, Tag, Image as ImageIcon, UploadSimple, ArrowLeft } from '@phosphor-icons/react';
+import { CheckCircle, Tag, UploadSimple, ArrowLeft } from '@phosphor-icons/react';
 
 import { api } from '../../services/api';
 import { useAuthStore } from '../../store/useAuthStore';
