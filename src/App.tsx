@@ -25,6 +25,7 @@ function EmBreveCliente() {
 export function App() {
   return (
     <BrowserRouter>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Routes>
         {/* LOGIN: Sem moldura */}
         <Route path="/restaurante/login" element={<Login />} />
